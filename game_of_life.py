@@ -173,10 +173,7 @@ class GameFrame(tk.Frame):
     
     def setup_ui(self):
         """Inicjalizacja komponentów interfejsu użytkownika."""
-        self.canvas = tk.Canvas(self, 
-                               width=self.master.settings.grid_width * self.master.settings.cell_size,
-                               height=self.master.settings.grid_height * self.master.settings.cell_size,
-                               bg='white')
+        self.canvas = tk.Canvas(self, width=self.master.settings.grid_width * self.master.settings.cell_size, height=self.master.settings.grid_height * self.master.settings.cell_size, bg='white')
         self.canvas.pack(pady=10)
         self.canvas.bind("<Button-1>", self.on_canvas_click)
         self.controls = tk.Frame(self)
