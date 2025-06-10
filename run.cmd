@@ -1,1 +1,1 @@
-py main.py
+py game_of_life.py
