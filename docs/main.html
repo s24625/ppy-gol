@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.5">
+<title>main API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>main</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="main.App"><code class="flex name class">
+<span>class <span class="ident">App</span></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class App(tk.Tk):
+    &#34;&#34;&#34;Main application class for the Game of Life GUI.&#34;&#34;&#34;
+    
+    def __init__(self):
+        super().__init__()
+        self.title(&#34;Conway&#39;s Game of Life&#34;)
+        self.geometry(&#34;800x600&#34;)
+        self.settings = SettingsManager()
+        self.show_start_screen()
+    
+    def show_start_screen(self):
+        &#34;&#34;&#34;Display the start screen with navigation buttons.&#34;&#34;&#34;
+        if hasattr(self, &#39;current_frame&#39;):
+            self.current_frame.destroy()
+        self.current_frame = StartFrame(self)
+        self.current_frame.pack(expand=True)
+    
+    def show_settings_screen(self):
+        &#34;&#34;&#34;Display the settings adjustment screen.&#34;&#34;&#34;
+        self.current_frame.destroy()
+        self.current_frame = SettingsFrame(self)
+        self.current_frame.pack(expand=True)
+    
+    def show_game_screen(self):
+        &#34;&#34;&#34;Display the game simulation screen.&#34;&#34;&#34;
+        self.current_frame.destroy()
+        self.current_frame = GameFrame(self)
+        self.current_frame.pack(expand=True)</code></pre>
+</details>
+<div class="desc"><p>Main application class for the Game of Life GUI.</p>
+<p>Return a new top level widget on screen SCREENNAME. A new Tcl interpreter will
+be created. BASENAME will be used for the identification of the profile file (see
+readprofile).
+It is constructed from sys.argv[0] without extensions if None is given. CLASSNAME
+is the name of the widget class.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>tkinter.Tk</li>
+<li>tkinter.Misc</li>
+<li>tkinter.Wm</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="main.App.show_game_screen"><code class="name flex">
+<span>def <span class="ident">show_game_screen</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show_game_screen(self):
+    &#34;&#34;&#34;Display the game simulation screen.&#34;&#34;&#34;
+    self.current_frame.destroy()
+    self.current_frame = GameFrame(self)
+    self.current_frame.pack(expand=True)</code></pre>
+</details>
+<div class="desc"><p>Display the game simulation screen.</p></div>
+</dd>
+<dt id="main.App.show_settings_screen"><code class="name flex">
+<span>def <span class="ident">show_settings_screen</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show_settings_screen(self):
+    &#34;&#34;&#34;Display the settings adjustment screen.&#34;&#34;&#34;
+    self.current_frame.destroy()
+    self.current_frame = SettingsFrame(self)
+    self.current_frame.pack(expand=True)</code></pre>
+</details>
+<div class="desc"><p>Display the settings adjustment screen.</p></div>
+</dd>
+<dt id="main.App.show_start_screen"><code class="name flex">
+<span>def <span class="ident">show_start_screen</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show_start_screen(self):
+    &#34;&#34;&#34;Display the start screen with navigation buttons.&#34;&#34;&#34;
+    if hasattr(self, &#39;current_frame&#39;):
+        self.current_frame.destroy()
+    self.current_frame = StartFrame(self)
+    self.current_frame.pack(expand=True)</code></pre>
+</details>
+<div class="desc"><p>Display the start screen with navigation buttons.</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="main.GameFrame"><code class="flex name class">
+<span>class <span class="ident">GameFrame</span></span>
+<span>(</span><span>master)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GameFrame(tk.Frame):
+    &#34;&#34;&#34;Game simulation frame with interactive grid and controls.&#34;&#34;&#34;
+    
+    def __init__(self, master):
+        super().__init__(master)
+        self.master = master
+        self.game = GameOfLife(master.settings.grid_width, master.settings.grid_height)
+        self.running = False
+        self.after_id = None
+        self.setup_ui()
+    
+    def setup_ui(self):
+        &#34;&#34;&#34;Initialize UI components.&#34;&#34;&#34;
+        self.canvas = tk.Canvas(self, 
+                               width=self.master.settings.grid_width * self.master.settings.cell_size,
+                               height=self.master.settings.grid_height * self.master.settings.cell_size,
+                               bg=&#39;white&#39;)
+        self.canvas.pack(pady=10)
+        self.canvas.bind(&#34;&lt;Button-1&gt;&#34;, self.on_canvas_click)
+        self.controls = tk.Frame(self)
+        self.controls.pack(pady=10)
+        self.start_btn = tk.Button(self.controls, text=&#34;Start&#34;, command=self.toggle_simulation)
+        self.start_btn.pack(side=tk.LEFT, padx=5)
+        tk.Button(self.controls, text=&#34;Clear&#34;, command=self.clear_grid).pack(side=tk.LEFT, padx=5)
+        tk.Button(self.controls, text=&#34;Back&#34;, command=self.master.show_start_screen).pack(side=tk.LEFT, padx=5)
+        self.draw_grid()
+    
+    def on_canvas_click(self, event):
+        &#34;&#34;&#34;Handle canvas click events to toggle cells.&#34;&#34;&#34;
+        x = event.x // self.master.settings.cell_size
+        y = event.y // self.master.settings.cell_size
+        self.game.toggle_cell(x, y)
+        self.draw_grid()
+    
+    def draw_grid(self):
+        &#34;&#34;&#34;Draw the current grid state on the canvas.&#34;&#34;&#34;
+        self.canvas.delete(&#34;all&#34;)
+        cell_size = self.master.settings.cell_size
+        for y in range(self.game.height):
+            for x in range(self.game.width):
+                color = &#39;black&#39; if self.game.grid[y][x] else &#39;white&#39;
+                x0 = x * cell_size
+                y0 = y * cell_size
+                x1 = x0 + cell_size
+                y1 = y0 + cell_size
+                self.canvas.create_rectangle(x0, y0, x1, y1, fill=color, outline=&#39;gray&#39;)
+    
+    def toggle_simulation(self):
+        &#34;&#34;&#34;Toggle simulation running state.&#34;&#34;&#34;
+        self.running = not self.running
+        self.start_btn.config(text=&#34;Stop&#34; if self.running else &#34;Start&#34;)
+        if self.running:
+            self.run_simulation()
+    
+    def run_simulation(self):
+        &#34;&#34;&#34;Run the simulation step.&#34;&#34;&#34;
+        if self.running:
+            self.game.next_generation()
+            self.draw_grid()
+            self.after_id = self.after(self.master.settings.update_interval, self.run_simulation)
+    
+    def clear_grid(self):
+        &#34;&#34;&#34;Clear the grid and stop simulation.&#34;&#34;&#34;
+        self.running = False
+        self.start_btn.config(text=&#34;Start&#34;)
+        if self.after_id:
+            self.after_cancel(self.after_id)
+        self.game.clear_grid()
+        self.draw_grid()</code></pre>
+</details>
+<div class="desc"><p>Game simulation frame with interactive grid and controls.</p>
+<p>Construct a frame widget with the parent MASTER.</p>
+<p>Valid resource names: background, bd, bg, borderwidth, class,
+colormap, container, cursor, height, highlightbackground,
+highlightcolor, highlightthickness, relief, takefocus, visual, width.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>tkinter.Frame</li>
+<li>tkinter.Widget</li>
+<li>tkinter.BaseWidget</li>
+<li>tkinter.Misc</li>
+<li>tkinter.Pack</li>
+<li>tkinter.Place</li>
+<li>tkinter.Grid</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="main.GameFrame.clear_grid"><code class="name flex">
+<span>def <span class="ident">clear_grid</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def clear_grid(self):
+    &#34;&#34;&#34;Clear the grid and stop simulation.&#34;&#34;&#34;
+    self.running = False
+    self.start_btn.config(text=&#34;Start&#34;)
+    if self.after_id:
+        self.after_cancel(self.after_id)
+    self.game.clear_grid()
+    self.draw_grid()</code></pre>
+</details>
+<div class="desc"><p>Clear the grid and stop simulation.</p></div>
+</dd>
+<dt id="main.GameFrame.draw_grid"><code class="name flex">
+<span>def <span class="ident">draw_grid</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def draw_grid(self):
+    &#34;&#34;&#34;Draw the current grid state on the canvas.&#34;&#34;&#34;
+    self.canvas.delete(&#34;all&#34;)
+    cell_size = self.master.settings.cell_size
+    for y in range(self.game.height):
+        for x in range(self.game.width):
+            color = &#39;black&#39; if self.game.grid[y][x] else &#39;white&#39;
+            x0 = x * cell_size
+            y0 = y * cell_size
+            x1 = x0 + cell_size
+            y1 = y0 + cell_size
+            self.canvas.create_rectangle(x0, y0, x1, y1, fill=color, outline=&#39;gray&#39;)</code></pre>
+</details>
+<div class="desc"><p>Draw the current grid state on the canvas.</p></div>
+</dd>
+<dt id="main.GameFrame.on_canvas_click"><code class="name flex">
+<span>def <span class="ident">on_canvas_click</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def on_canvas_click(self, event):
+    &#34;&#34;&#34;Handle canvas click events to toggle cells.&#34;&#34;&#34;
+    x = event.x // self.master.settings.cell_size
+    y = event.y // self.master.settings.cell_size
+    self.game.toggle_cell(x, y)
+    self.draw_grid()</code></pre>
+</details>
+<div class="desc"><p>Handle canvas click events to toggle cells.</p></div>
+</dd>
+<dt id="main.GameFrame.run_simulation"><code class="name flex">
+<span>def <span class="ident">run_simulation</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def run_simulation(self):
+    &#34;&#34;&#34;Run the simulation step.&#34;&#34;&#34;
+    if self.running:
+        self.game.next_generation()
+        self.draw_grid()
+        self.after_id = self.after(self.master.settings.update_interval, self.run_simulation)</code></pre>
+</details>
+<div class="desc"><p>Run the simulation step.</p></div>
+</dd>
+<dt id="main.GameFrame.setup_ui"><code class="name flex">
+<span>def <span class="ident">setup_ui</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setup_ui(self):
+    &#34;&#34;&#34;Initialize UI components.&#34;&#34;&#34;
+    self.canvas = tk.Canvas(self, 
+                           width=self.master.settings.grid_width * self.master.settings.cell_size,
+                           height=self.master.settings.grid_height * self.master.settings.cell_size,
+                           bg=&#39;white&#39;)
+    self.canvas.pack(pady=10)
+    self.canvas.bind(&#34;&lt;Button-1&gt;&#34;, self.on_canvas_click)
+    self.controls = tk.Frame(self)
+    self.controls.pack(pady=10)
+    self.start_btn = tk.Button(self.controls, text=&#34;Start&#34;, command=self.toggle_simulation)
+    self.start_btn.pack(side=tk.LEFT, padx=5)
+    tk.Button(self.controls, text=&#34;Clear&#34;, command=self.clear_grid).pack(side=tk.LEFT, padx=5)
+    tk.Button(self.controls, text=&#34;Back&#34;, command=self.master.show_start_screen).pack(side=tk.LEFT, padx=5)
+    self.draw_grid()</code></pre>
+</details>
+<div class="desc"><p>Initialize UI components.</p></div>
+</dd>
+<dt id="main.GameFrame.toggle_simulation"><code class="name flex">
+<span>def <span class="ident">toggle_simulation</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def toggle_simulation(self):
+    &#34;&#34;&#34;Toggle simulation running state.&#34;&#34;&#34;
+    self.running = not self.running
+    self.start_btn.config(text=&#34;Stop&#34; if self.running else &#34;Start&#34;)
+    if self.running:
+        self.run_simulation()</code></pre>
+</details>
+<div class="desc"><p>Toggle simulation running state.</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="main.GameOfLife"><code class="flex name class">
+<span>class <span class="ident">GameOfLife</span></span>
+<span>(</span><span>width, height)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GameOfLife:
+    &#34;&#34;&#34;Implements Conway&#39;s Game of Life simulation logic.&#34;&#34;&#34;
+    
+    def __init__(self, width, height):
+        &#34;&#34;&#34;Initialize grid with specified dimensions.&#34;&#34;&#34;
+        self.width = width
+        self.height = height
+        self.grid = [[False for _ in range(width)] for _ in range(height)]
+    
+    def next_generation(self):
+        &#34;&#34;&#34;Compute the next generation based on Conway&#39;s rules.&#34;&#34;&#34;
+        new_grid = [[False for _ in range(self.width)] for _ in range(self.height)]
+        for y in range(self.height):
+            for x in range(self.width):
+                neighbors = self.count_neighbors(x, y)
+                if self.grid[y][x]:
+                    new_grid[y][x] = 2 &lt;= neighbors &lt;= 3
+                else:
+                    new_grid[y][x] = neighbors == 3
+        self.grid = new_grid
+    
+    def count_neighbors(self, x, y):
+        &#34;&#34;&#34;Count alive neighbors around cell (x, y).&#34;&#34;&#34;
+        count = 0
+        for dy in (-1, 0, 1):
+            for dx in (-1, 0, 1):
+                if dx == 0 and dy == 0:
+                    continue
+                nx, ny = x + dx, y + dy
+                if 0 &lt;= nx &lt; self.width and 0 &lt;= ny &lt; self.height:
+                    count += self.grid[ny][nx]
+        return count
+    
+    def toggle_cell(self, x, y):
+        &#34;&#34;&#34;Toggle the state of the cell at (x, y).&#34;&#34;&#34;
+        if 0 &lt;= x &lt; self.width and 0 &lt;= y &lt; self.height:
+            self.grid[y][x] = not self.grid[y][x]
+    
+    def clear_grid(self):
+        &#34;&#34;&#34;Reset all cells to dead.&#34;&#34;&#34;
+        self.grid = [[False for _ in range(self.width)] for _ in range(self.height)]</code></pre>
+</details>
+<div class="desc"><p>Implements Conway's Game of Life simulation logic.</p>
+<p>Initialize grid with specified dimensions.</p></div>
+<h3>Methods</h3>
+<dl>
+<dt id="main.GameOfLife.clear_grid"><code class="name flex">
+<span>def <span class="ident">clear_grid</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def clear_grid(self):
+    &#34;&#34;&#34;Reset all cells to dead.&#34;&#34;&#34;
+    self.grid = [[False for _ in range(self.width)] for _ in range(self.height)]</code></pre>
+</details>
+<div class="desc"><p>Reset all cells to dead.</p></div>
+</dd>
+<dt id="main.GameOfLife.count_neighbors"><code class="name flex">
+<span>def <span class="ident">count_neighbors</span></span>(<span>self, x, y)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def count_neighbors(self, x, y):
+    &#34;&#34;&#34;Count alive neighbors around cell (x, y).&#34;&#34;&#34;
+    count = 0
+    for dy in (-1, 0, 1):
+        for dx in (-1, 0, 1):
+            if dx == 0 and dy == 0:
+                continue
+            nx, ny = x + dx, y + dy
+            if 0 &lt;= nx &lt; self.width and 0 &lt;= ny &lt; self.height:
+                count += self.grid[ny][nx]
+    return count</code></pre>
+</details>
+<div class="desc"><p>Count alive neighbors around cell (x, y).</p></div>
+</dd>
+<dt id="main.GameOfLife.next_generation"><code class="name flex">
+<span>def <span class="ident">next_generation</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def next_generation(self):
+    &#34;&#34;&#34;Compute the next generation based on Conway&#39;s rules.&#34;&#34;&#34;
+    new_grid = [[False for _ in range(self.width)] for _ in range(self.height)]
+    for y in range(self.height):
+        for x in range(self.width):
+            neighbors = self.count_neighbors(x, y)
+            if self.grid[y][x]:
+                new_grid[y][x] = 2 &lt;= neighbors &lt;= 3
+            else:
+                new_grid[y][x] = neighbors == 3
+    self.grid = new_grid</code></pre>
+</details>
+<div class="desc"><p>Compute the next generation based on Conway's rules.</p></div>
+</dd>
+<dt id="main.GameOfLife.toggle_cell"><code class="name flex">
+<span>def <span class="ident">toggle_cell</span></span>(<span>self, x, y)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def toggle_cell(self, x, y):
+    &#34;&#34;&#34;Toggle the state of the cell at (x, y).&#34;&#34;&#34;
+    if 0 &lt;= x &lt; self.width and 0 &lt;= y &lt; self.height:
+        self.grid[y][x] = not self.grid[y][x]</code></pre>
+</details>
+<div class="desc"><p>Toggle the state of the cell at (x, y).</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="main.SettingsFrame"><code class="flex name class">
+<span>class <span class="ident">SettingsFrame</span></span>
+<span>(</span><span>master)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SettingsFrame(tk.Frame):
+    &#34;&#34;&#34;Settings adjustment frame with input fields.&#34;&#34;&#34;
+    
+    def __init__(self, master):
+        super().__init__(master)
+        self.master = master
+        self.entries = {}
+        labels = [
+            (&#39;Grid Width&#39;, master.settings.grid_width),
+            (&#39;Grid Height&#39;, master.settings.grid_height),
+            (&#39;Cell Size&#39;, master.settings.cell_size),
+            (&#39;Update Interval (ms)&#39;, master.settings.update_interval)
+        ]
+        for i, (text, default) in enumerate(labels):
+            tk.Label(self, text=text).grid(row=i, column=0, padx=5, pady=5)
+            entry = tk.Entry(self)
+            entry.insert(0, str(default))
+            entry.grid(row=i, column=1, padx=5, pady=5)
+            self.entries[text] = entry
+        tk.Button(self, text=&#34;Save&#34;, command=self.save).grid(row=len(labels), column=0, pady=10)
+        tk.Button(self, text=&#34;Back&#34;, command=self.master.show_start_screen).grid(row=len(labels), column=1, pady=10)
+    
+    def save(self):
+        &#34;&#34;&#34;Save settings from input fields.&#34;&#34;&#34;
+        try:
+            width = int(self.entries[&#39;Grid Width&#39;].get())
+            height = int(self.entries[&#39;Grid Height&#39;].get())
+            cell_size = int(self.entries[&#39;Cell Size&#39;].get())
+            interval = int(self.entries[&#39;Update Interval (ms)&#39;].get())
+            if width &lt; 1 or height &lt; 1 or cell_size &lt; 1 or interval &lt; 1:
+                raise ValueError(&#34;Values must be positive integers.&#34;)
+            self.master.settings.save_settings(width, height, cell_size, interval)
+            self.master.show_start_screen()
+        except ValueError as e:
+            messagebox.showerror(&#34;Invalid Input&#34;, str(e))</code></pre>
+</details>
+<div class="desc"><p>Settings adjustment frame with input fields.</p>
+<p>Construct a frame widget with the parent MASTER.</p>
+<p>Valid resource names: background, bd, bg, borderwidth, class,
+colormap, container, cursor, height, highlightbackground,
+highlightcolor, highlightthickness, relief, takefocus, visual, width.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>tkinter.Frame</li>
+<li>tkinter.Widget</li>
+<li>tkinter.BaseWidget</li>
+<li>tkinter.Misc</li>
+<li>tkinter.Pack</li>
+<li>tkinter.Place</li>
+<li>tkinter.Grid</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="main.SettingsFrame.save"><code class="name flex">
+<span>def <span class="ident">save</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save(self):
+    &#34;&#34;&#34;Save settings from input fields.&#34;&#34;&#34;
+    try:
+        width = int(self.entries[&#39;Grid Width&#39;].get())
+        height = int(self.entries[&#39;Grid Height&#39;].get())
+        cell_size = int(self.entries[&#39;Cell Size&#39;].get())
+        interval = int(self.entries[&#39;Update Interval (ms)&#39;].get())
+        if width &lt; 1 or height &lt; 1 or cell_size &lt; 1 or interval &lt; 1:
+            raise ValueError(&#34;Values must be positive integers.&#34;)
+        self.master.settings.save_settings(width, height, cell_size, interval)
+        self.master.show_start_screen()
+    except ValueError as e:
+        messagebox.showerror(&#34;Invalid Input&#34;, str(e))</code></pre>
+</details>
+<div class="desc"><p>Save settings from input fields.</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="main.SettingsManager"><code class="flex name class">
+<span>class <span class="ident">SettingsManager</span></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SettingsManager:
+    &#34;&#34;&#34;Zarządza ustawieniami aplikacji, w tym ładowaniem i zapisywaniem do pliku JSON.&#34;&#34;&#34;
+    
+    def __init__(self):
+        self.settings_file = &#34;settings.json&#34;
+        self.load_settings()
+    
+    def load_settings(self):
+        &#34;&#34;&#34;Wczytaj ustawienia z pliku JSON lub ustaw wartości domyślne, jeśli ich nie znaleziono.&#34;&#34;&#34;
+        try:
+            with open(self.settings_file, &#39;r&#39;) as f:
+                data = json.load(f)
+                self.grid_width = data.get(&#39;grid_width&#39;, 30)
+                self.grid_height = data.get(&#39;grid_height&#39;, 30)
+                self.cell_size = data.get(&#39;cell_size&#39;, 20)
+                self.update_interval = data.get(&#39;update_interval&#39;, 100)
+        except (FileNotFoundError, json.JSONDecodeError):
+            self.set_defaults()
+    
+    def set_defaults(self):
+        &#34;&#34;&#34;Ustaw wartości ustawień domyślnych.&#34;&#34;&#34;
+        self.grid_width = 30
+        self.grid_height = 30
+        self.cell_size = 20
+        self.update_interval = 100
+    
+    def save_settings(self, grid_width, grid_height, cell_size, update_interval):
+        &#34;&#34;&#34;Save current settings to JSON file.&#34;&#34;&#34;
+        self.grid_width = grid_width
+        self.grid_height = grid_height
+        self.cell_size = cell_size
+        self.update_interval = update_interval
+        data = {
+            &#39;grid_width&#39;: grid_width,
+            &#39;grid_height&#39;: grid_height,
+            &#39;cell_size&#39;: cell_size,
+            &#39;update_interval&#39;: update_interval
+        }
+        with open(self.settings_file, &#39;w&#39;) as f:
+            json.dump(data, f)</code></pre>
+</details>
+<div class="desc"><p>Zarządza ustawieniami aplikacji, w tym ładowaniem i zapisywaniem do pliku JSON.</p></div>
+<h3>Methods</h3>
+<dl>
+<dt id="main.SettingsManager.load_settings"><code class="name flex">
+<span>def <span class="ident">load_settings</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_settings(self):
+    &#34;&#34;&#34;Wczytaj ustawienia z pliku JSON lub ustaw wartości domyślne, jeśli ich nie znaleziono.&#34;&#34;&#34;
+    try:
+        with open(self.settings_file, &#39;r&#39;) as f:
+            data = json.load(f)
+            self.grid_width = data.get(&#39;grid_width&#39;, 30)
+            self.grid_height = data.get(&#39;grid_height&#39;, 30)
+            self.cell_size = data.get(&#39;cell_size&#39;, 20)
+            self.update_interval = data.get(&#39;update_interval&#39;, 100)
+    except (FileNotFoundError, json.JSONDecodeError):
+        self.set_defaults()</code></pre>
+</details>
+<div class="desc"><p>Wczytaj ustawienia z pliku JSON lub ustaw wartości domyślne, jeśli ich nie znaleziono.</p></div>
+</dd>
+<dt id="main.SettingsManager.save_settings"><code class="name flex">
+<span>def <span class="ident">save_settings</span></span>(<span>self, grid_width, grid_height, cell_size, update_interval)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_settings(self, grid_width, grid_height, cell_size, update_interval):
+    &#34;&#34;&#34;Save current settings to JSON file.&#34;&#34;&#34;
+    self.grid_width = grid_width
+    self.grid_height = grid_height
+    self.cell_size = cell_size
+    self.update_interval = update_interval
+    data = {
+        &#39;grid_width&#39;: grid_width,
+        &#39;grid_height&#39;: grid_height,
+        &#39;cell_size&#39;: cell_size,
+        &#39;update_interval&#39;: update_interval
+    }
+    with open(self.settings_file, &#39;w&#39;) as f:
+        json.dump(data, f)</code></pre>
+</details>
+<div class="desc"><p>Save current settings to JSON file.</p></div>
+</dd>
+<dt id="main.SettingsManager.set_defaults"><code class="name flex">
+<span>def <span class="ident">set_defaults</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_defaults(self):
+    &#34;&#34;&#34;Ustaw wartości ustawień domyślnych.&#34;&#34;&#34;
+    self.grid_width = 30
+    self.grid_height = 30
+    self.cell_size = 20
+    self.update_interval = 100</code></pre>
+</details>
+<div class="desc"><p>Ustaw wartości ustawień domyślnych.</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="main.StartFrame"><code class="flex name class">
+<span>class <span class="ident">StartFrame</span></span>
+<span>(</span><span>master)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class StartFrame(tk.Frame):
+    &#34;&#34;&#34;Start screen frame with navigation buttons.&#34;&#34;&#34;
+    
+    def __init__(self, master):
+        super().__init__(master)
+        self.master = master
+        tk.Button(self, text=&#34;Start Game&#34;, command=master.show_game_screen).pack(pady=10)
+        tk.Button(self, text=&#34;Settings&#34;, command=master.show_settings_screen).pack(pady=10)
+        tk.Button(self, text=&#34;Quit&#34;, command=master.quit).pack(pady=10)</code></pre>
+</details>
+<div class="desc"><p>Start screen frame with navigation buttons.</p>
+<p>Construct a frame widget with the parent MASTER.</p>
+<p>Valid resource names: background, bd, bg, borderwidth, class,
+colormap, container, cursor, height, highlightbackground,
+highlightcolor, highlightthickness, relief, takefocus, visual, width.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>tkinter.Frame</li>
+<li>tkinter.Widget</li>
+<li>tkinter.BaseWidget</li>
+<li>tkinter.Misc</li>
+<li>tkinter.Pack</li>
+<li>tkinter.Place</li>
+<li>tkinter.Grid</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="main.App" href="#main.App">App</a></code></h4>
+<ul class="">
+<li><code><a title="main.App.show_game_screen" href="#main.App.show_game_screen">show_game_screen</a></code></li>
+<li><code><a title="main.App.show_settings_screen" href="#main.App.show_settings_screen">show_settings_screen</a></code></li>
+<li><code><a title="main.App.show_start_screen" href="#main.App.show_start_screen">show_start_screen</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="main.GameFrame" href="#main.GameFrame">GameFrame</a></code></h4>
+<ul class="two-column">
+<li><code><a title="main.GameFrame.clear_grid" href="#main.GameFrame.clear_grid">clear_grid</a></code></li>
+<li><code><a title="main.GameFrame.draw_grid" href="#main.GameFrame.draw_grid">draw_grid</a></code></li>
+<li><code><a title="main.GameFrame.on_canvas_click" href="#main.GameFrame.on_canvas_click">on_canvas_click</a></code></li>
+<li><code><a title="main.GameFrame.run_simulation" href="#main.GameFrame.run_simulation">run_simulation</a></code></li>
+<li><code><a title="main.GameFrame.setup_ui" href="#main.GameFrame.setup_ui">setup_ui</a></code></li>
+<li><code><a title="main.GameFrame.toggle_simulation" href="#main.GameFrame.toggle_simulation">toggle_simulation</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="main.GameOfLife" href="#main.GameOfLife">GameOfLife</a></code></h4>
+<ul class="">
+<li><code><a title="main.GameOfLife.clear_grid" href="#main.GameOfLife.clear_grid">clear_grid</a></code></li>
+<li><code><a title="main.GameOfLife.count_neighbors" href="#main.GameOfLife.count_neighbors">count_neighbors</a></code></li>
+<li><code><a title="main.GameOfLife.next_generation" href="#main.GameOfLife.next_generation">next_generation</a></code></li>
+<li><code><a title="main.GameOfLife.toggle_cell" href="#main.GameOfLife.toggle_cell">toggle_cell</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="main.SettingsFrame" href="#main.SettingsFrame">SettingsFrame</a></code></h4>
+<ul class="">
+<li><code><a title="main.SettingsFrame.save" href="#main.SettingsFrame.save">save</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="main.SettingsManager" href="#main.SettingsManager">SettingsManager</a></code></h4>
+<ul class="">
+<li><code><a title="main.SettingsManager.load_settings" href="#main.SettingsManager.load_settings">load_settings</a></code></li>
+<li><code><a title="main.SettingsManager.save_settings" href="#main.SettingsManager.save_settings">save_settings</a></code></li>
+<li><code><a title="main.SettingsManager.set_defaults" href="#main.SettingsManager.set_defaults">set_defaults</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="main.StartFrame" href="#main.StartFrame">StartFrame</a></code></h4>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.5</a>.</p>
+</footer>
+</body>
+</html>
