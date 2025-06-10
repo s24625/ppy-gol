@@ -1,4 +1,5 @@
 @echo off
+pip install pdoc3
 REM Generacja HTML
 bin\pdoc3 --html --output-dir docs main.py --force
 REM Konwersja HTML na PDF
